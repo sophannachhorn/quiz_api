@@ -15,7 +15,6 @@ class CreateAuthorsTable extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('book_id')->constrained()->onDelete('CASCADE');
             $table->string('name');
             $table->integer('age');
             $table->string('province');

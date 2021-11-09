@@ -32,7 +32,6 @@ class AuthorController extends Controller
             'province' => 'nullable'
         ]);
         $author = new Author();
-        $author->book_id=$request->book_id;
         $author->name= $request->name;
         $author->age= $request->age;
         $author->province= $request->province;
@@ -61,7 +60,6 @@ class AuthorController extends Controller
     public function update(Request $request, $id)
     {
         $author=Author::findorfial($id);
-        $author->book_id=$request->book_id;
         $author->name= $request->name;
         $author->age= $request->age;
         $author->province= $request->province;

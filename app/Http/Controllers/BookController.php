@@ -31,9 +31,9 @@ class BookController extends Controller
             'body' => 'min:3|max:50'
         ]);
         $book = new Book();
-        $book->name= $request->name;
-        $book->age= $request->age;
-        $book->province= $request->province;
+        $book->author_id= $request->author_id;
+        $book->title= $request->title;
+        $book->body= $request->body;
         $book->save();
         return response()->json("book created");
     }
@@ -58,7 +58,7 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $book=Book::findorfial($id);
+        $book=Book::findorfail($id);
         $book->author_id= $request->author_id;
         $book->title= $request->title;
         $book->body= $request->body;
